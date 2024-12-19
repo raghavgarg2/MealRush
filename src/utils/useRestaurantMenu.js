@@ -1,20 +1,33 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 
 const useRestaurantMenu = (resId) => {
   const [resMenu, setResMenu] = useState(null);
 
   useEffect(() => {
-    fetchMenu();
-  }, []);
+    if (resId) {
+      fetchMenu(resId); // Pass `resId` dynamically
+    }
+  }, [resId]); // Add `resId` as a dependency
 
-  const fetchMenu = async () => {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=30.32750&lng=78.03250&restaurantId=793100&catalog_qa=undefined&submitAction=ENTER" +
-        resId
-    );
-    const json = await data.json();
-    setResMenu(json.data);
+  const fetchMenu = async (resId) => {
+    const proxyUrl = "https://cors-anywhere-hrs9.onrender.com/";
+    const apiUrl = `${proxyUrl}https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=30.32750&lng=78.03250&restaurantId=793100&catalog_qa=undefined&submitAction=ENTER${resId}`;
+
+    try {
+      const response = await fetch(apiUrl);
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      const json = await response.json();
+      setResMenu(json.data); // Set the menu data
+    } catch (error) {
+      console.error("Error fetching restaurant menu:", error);
+    }
   };
-  return resMenu;
+
+  return resMenu; // Return the fetched menu data
 };
+
 export default useRestaurantMenu;

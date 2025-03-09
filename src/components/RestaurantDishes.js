@@ -12,7 +12,7 @@ const RestaurantDishes = () => {
   const { resId } = useParams();
 
   const resMenu = useRestaurantMenu(resId);
-
+ 
   if (resMenu === null) {
     return <Shimmer />;
   }

@@ -2,16 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="554e37a9-ae39-4a84-9991-3bebad1da9f6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Accordian.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Accordian.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Body.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Body.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Cart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/RestaurantCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RestaurantCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Login.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/RestaurantContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RestaurantContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Shimmer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Shimmer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/cartSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/cartSlice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/RestaurantDishes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RestaurantDishes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/useRestaurantMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/useRestaurantMenu.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

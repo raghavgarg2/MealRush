@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
-import useOnlineStatus from "../utils/useOnlineStatus";
 
 const RestaurantContainer = () => {
   const [resList, setResList] = useState([]);
@@ -13,28 +12,13 @@ const RestaurantContainer = () => {
     fetchData();
   }, []);
 
-  // const fetchData = async () => {
-  //   const data = await fetch(
-  //     "https://www.swiggy.com/dapi/restaurants/list/v5?lat=30.32750&lng=78.03250&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-  //   );
-
-  //   const json = await data.json();
-  //   console.log(json);
-
-  //   setResList(
-  //     json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-  //   );
-  //   setFilteredList(
-  //     json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-  //   );
-  // };
   const fetchData = async () => {
-    const proxyUrl = "https://cors-anywhere-hrs9.onrender.com/"; // Your proxy URL
+    const proxyUrl = "https://cors-anywhere-hrs9.onrender.com/";
     const apiUrl =
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=30.32750&lng=78.03250&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"; // Swiggy API URL
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=30.32750&lng=78.03250&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
 
     try {
-      const response = await fetch(proxyUrl + apiUrl); // Fetch data through the proxy
+      const response = await fetch(proxyUrl + apiUrl);
       const json = await response.json();
       console.log(json);
 
@@ -50,15 +34,6 @@ const RestaurantContainer = () => {
       console.error("Error fetching data:", error);
     }
   };
-
-  const onlineStatus = useOnlineStatus();
-  if (onlineStatus === false) {
-    return (
-      <h1 className="text-center mt-20 text-red-500 font-semibold">
-        Looks like you are offline
-      </h1>
-    );
-  }
 
   return resList.length === 0 ? (
     <Shimmer />

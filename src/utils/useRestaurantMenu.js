@@ -5,9 +5,9 @@ const useRestaurantMenu = (resId) => {
 
   useEffect(() => {
     if (resId) {
-      fetchMenu(resId); // Pass `resId` dynamically
+      fetchMenu(resId);
     }
-  }, [resId]); // Add `resId` as a dependency
+  }, [resId]);
 
   const fetchMenu = async (resId) => {
     const proxyUrl = "https://cors-anywhere-hrs9.onrender.com/";
@@ -21,13 +21,13 @@ const useRestaurantMenu = (resId) => {
       }
 
       const json = await response.json();
-      setResMenu(json.data); // Set the menu data
+      setResMenu(json.data);
     } catch (error) {
       console.error("Error fetching restaurant menu:", error);
     }
   };
 
-  return resMenu; // Return the fetched menu data
+  return resMenu;
 };
 
 export default useRestaurantMenu;
